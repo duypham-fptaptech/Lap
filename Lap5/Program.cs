@@ -1,43 +1,34 @@
-﻿using System;
-using Customer;
-using Order;
+using System;
 
-
-namespace Customer
-    {
-        class CustomerName
-        {
-            public String customerName { get; set; }
-        }
-    }
-
-    namespace Order
-    {   class GroceryItems
-        {
-            public void groceryItems()
-            {
-                Console.WriteLine("Grocery Items");
-            }
-        }
-
-        class BakeryProducts
-        {
-            public void bakeryProducts()
-            {
-                Console.WriteLine("Bakery Products");
-            }
-        }
-    }
-     class Program
+namespace Lap5
+{
+    internal class Program
     {
         public static void Main(string[] args)
         {
-            CustomerName customerName = new CustomerName();
-            customerName.customerName = "Customer";
-            Console.WriteLine(customerName);
-
-            Console.WriteLine("Customer has choice grocery items: ");
-            GroceryItems groceryItems = new GroceryItems();
-            groceryItems.groceryItems();
+            var highSchoolTeacher = new HighSchoolTeacher()
+            {
+                IdentityNumber = "ID001",
+                Name = "Spring Hero",
+                BaseSalary = 100,
+                Level = 1,
+                Bonus = 100,
+                IsSenior = false,
+                HighSchoolCode = "HS001"
+            };
+            Console.WriteLine(highSchoolTeacher.CalculateSalary());
+            var universityTeacher = new UniversityTeacher()
+            {
+                IdentityNumber = "ID001",
+                Name = "Du",
+                BaseSalary = 60000,
+                Level = 1,
+                Bonus = 1000,
+                IsSenior = true,
+                EnglishLevel = 2,
+                UniversityCode = "HS002"
+            };
+            Console.WriteLine(universityTeacher.CalculateSalary());
         }
     }
+}
